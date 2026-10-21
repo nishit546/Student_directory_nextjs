@@ -2,6 +2,7 @@ import Link from "next/link";
 import { GraduationCap } from "lucide-react";
 import NavLinks from "./NavLinks";
 
+
 export default function Header() {
   return (
     <header className="border-b border-slate-200 bg-white">
