@@ -1,11 +1,16 @@
 import { PenTool, SquareTerminal, TrendingUp } from "lucide-react";
 import type { DepartmentIcon as Icon } from "@/data/campus";
 
-export default function DepartmentIcon({ name }: { name: Icon }) {
-  const Cmp = { terminal: SquareTerminal, pen: PenTool, trend: TrendingUp }[name];
-  return (
-    <span className="flex h-8 w-8 items-center justify-center rounded bg-blue-50 text-blue-700">
-      <Cmp size={16} />
-    </span>
-  );
+export default function DepartmentIcon({
+  name,
+  size = 18,
+  className,
+}: {
+  name: Icon;
+  size?: number;
+  className?: string;
+}) {
+  if (name === "terminal") return <SquareTerminal size={size} className={className} />;
+  if (name === "pen") return <PenTool size={size} className={className} />;
+  return <TrendingUp size={size} className={className} />;
 }
